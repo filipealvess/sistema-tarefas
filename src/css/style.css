@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: rgb(8, 8, 105);
+}
+
+div#conteudo{
+    background: #fff;
+    width: 80%;
+    margin: auto;
+}
