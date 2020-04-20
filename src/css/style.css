@@ -6,11 +6,108 @@
 }
 
 body{
-    background: rgb(8, 8, 105);
+    background: rgb(25, 109, 50);
 }
 
 div#conteudo{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     background: #fff;
     width: 80%;
-    margin: auto;
+    border-radius: 20px;
+    padding: 10px 0;
+    max-width: 600px;
+}
+
+h1{
+    text-align: center;
+}
+
+div#addTarefa{
+    position: relative;
+    border: 1px solid black;
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 20px;
+    max-width: 300px;
+    height: 40px;
+}
+
+input#novaTar{
+    display: inline-block;
+    position: absolute;
+    height: 35px;
+    width: 70%;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    font-size: 16pt;
+    outline: none;
+}
+
+div#btnAdd{
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    cursor: pointer;
+    background: rgb(19, 189, 70);
+    color: white;
+}
+
+div#btnAdd p{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30pt;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.secaoTarefa{
+    position: relative;
+    border: 1px solid rgba(25, 109, 50, 0.7);
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 7px 0;
+    margin-bottom: 10px;
+}
+
+.secaoTarefa:hover img{
+    visibility: visible;
+}
+
+input.checkTar{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.secaoTarefa p{
+    display: inline-block;
+    position: relative;
+    width: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.secaoTarefa img{
+    position: absolute;
+    cursor: pointer;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    visibility: hidden;
 }
