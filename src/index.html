@@ -10,23 +10,36 @@
 
 <body>
     <div id="conteudo">
-        <h1>Lista de Tarefas</h1>
+        <header>
+            <h1>Lista de Tarefas</h1>
+        </header>
 
-        <div id="addTarefa">
-            <input type="text" placeholder="digite aqui..." id="novaTar" autofocus="autofocus" />
-            <div id="btnAdd" onclick="addTarefa()">
-                <p>+</p>
-            </div>
+        <div id="tarefas">
+            <table id="lista">
+                <tr>
+                    <td class="col1"><div class="circulo completo">✓</div></td>
+                    <td class="col2"><div class="texto tachado">Tarefa 1</div></td>
+                    <td class="col3"><div class="lixeira">&times;</div></td>
+                </tr>
+                <tr>
+                    <td class="col1"><div class="circulo"></div></td>
+                    <td class="col2"><div class="texto">Tarefa 2</div></td>
+                    <td class="col3"><div class="lixeira">&times;</div></td>
+                </tr>
+                <tr>
+                    <td class="col1"><div class="circulo"></div></td>
+                    <td class="col2"><div class="texto">Tarefa 3</div></td>
+                    <td class="col3"><div class="lixeira">&times;</div></td>
+                </tr>
+            </table>
         </div>
 
-        <!--<div class="secaoTarefa">
-            <input type="checkbox" name="checkTarefa" class="checkTar" />
-            <p>Tarefa 1</p>
-            <img src="img/close.png" alt="Excluir Tarefa" />
-        </div>-->
+        <div id="novaTarefa">
+            <input type="text" id="textoNovaTarefa" placeholder="digite aqui..." />
+            <div id="mais">&plus;</div>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
 </body>
-
 </html>
