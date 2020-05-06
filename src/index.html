@@ -16,27 +16,29 @@
 
         <div id="tarefas">
             <table id="lista">
-                <tr>
-                    <td class="col1"><div class="circulo completo">✓</div></td>
-                    <td class="col2"><div class="texto tachado">Tarefa 1</div></td>
-                    <td class="col3"><div class="lixeira">&times;</div></td>
-                </tr>
-                <tr>
-                    <td class="col1"><div class="circulo"></div></td>
-                    <td class="col2"><div class="texto">Tarefa 2</div></td>
-                    <td class="col3"><div class="lixeira">&times;</div></td>
-                </tr>
-                <tr>
-                    <td class="col1"><div class="circulo"></div></td>
-                    <td class="col2"><div class="texto">Tarefa 3</div></td>
-                    <td class="col3"><div class="lixeira">&times;</div></td>
-                </tr>
+                <tbody>
+                    <!-- <tr id="0">
+                        <td class="col1"><div class="circulo-completo">✓</div></td>
+                        <td class="col2"><div class="texto tachado">Tarefa 1</div></td>
+                        <td class="col3"><div class="lixeira">&times;</div></td>
+                    </tr>
+                    <tr id="1">
+                        <td class="col1"><div class="circulo"></div></td>
+                        <td class="col2"><div class="texto">Tarefa 2</div></td>
+                        <td class="col3"><div class="lixeira">&times;</div></td>
+                    </tr>
+                    <tr id="2">
+                        <td class="col1"><div class="circulo"></div></td>
+                        <td class="col2"><div class="texto">Tarefa 3</div></td>
+                        <td class="col3"><div class="lixeira">&times;</div></td>
+                    </tr> -->
+                </tbody>
             </table>
         </div>
 
         <div id="novaTarefa">
             <input type="text" id="textoNovaTarefa" placeholder="digite aqui..." />
-            <div id="mais">&plus;</div>
+            <div id="mais" onclick="checarTarefa()">&plus;</div>
         </div>
     </div>
 

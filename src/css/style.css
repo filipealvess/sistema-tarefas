@@ -116,12 +116,18 @@ header h1{
     cursor: pointer;
 }
 
-.completo{
+.circulo-completo{
     background: rgb(0, 128, 0);
-
+    
+    width: 15px;
+    height: 15px;
+    
+    cursor: pointer;
+    
     color: #fff;
-
+    
     border: 1px solid rgb(1, 75, 1);
+    border-radius: 20px;
 
     text-align: center;
 
