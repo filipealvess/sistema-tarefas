@@ -9,7 +9,26 @@ const CHECKINATIVO = "circulo";
 const CHECKCONTEUDO = "✓";
 
 /* variáveis */
-let id = 0;
+let LISTA;
+let id;
+
+/* OBTENDO ITENS DO ARMAZENAMENTO LOCAL */
+let dados = localStorage.getItem("TAREFAS");
+
+if(dados){
+    LISTA = JSON.parse(dados);
+    id = LISTA.length;
+    carregarLista(LISTA);
+} else{
+    LISTA = [];
+    id = 0;
+}
+
+function carregarLista(array){
+    array.forEach((item) => {
+        adicionarTarefa(item.nome, item.id, item.concluido, item.excluido);
+    });
+}
 
 /* ADIÇÃO DAS TAREFAS */
 function adicionarTarefa(tarefa, id, concluido, excluido) {
@@ -34,7 +53,18 @@ function adicionarTarefa(tarefa, id, concluido, excluido) {
 
 function checarTarefa() {
     if (textoTarefa.value) {
-        adicionarTarefa(textoTarefa.value, id, false, false);
+        const tarefa = textoTarefa.value;
+        adicionarTarefa(tarefa, id, false, false);
+        
+        LISTA.push({
+            nome: tarefa,
+            id: id,
+            concluido: false,
+            excluido: false
+        });
+
+        localStorage.setItem("TAREFAS", JSON.stringify(LISTA));
+
         id++;
     }
 }
@@ -59,11 +89,14 @@ function concluirTarefa(elemento){
     } else{
         check.textContent = "";
     }
+
+    LISTA[elemento.id].concluido = LISTA[elemento.id].concluido ? false : true;
 }
 
 function excluirTarefa(elemento){
-    console.log(elemento);
     elemento.parentNode.removeChild(elemento);
+
+    LISTA[elemento.id].excluido = true;
 }
 
 lista.addEventListener("click", (event) => {
@@ -75,4 +108,6 @@ lista.addEventListener("click", (event) => {
     } else if(trabalho === "excluir"){
         excluirTarefa(elemento.parentNode.parentNode);
     }
+
+    localStorage.setItem("TAREFAS", JSON.stringify(LISTA));
 });
