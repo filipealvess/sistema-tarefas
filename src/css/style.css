@@ -1,237 +1,116 @@
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    
-    font-family: arial, sans-serif;
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
 }
 
-body{
-    background: rgb(160, 160, 160);
+#app {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	width: 80%;
+	max-width: 500px;
+	height: 80vh;
+	border: 1px solid black;
+	border-radius: 20px;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-#conteudo{
-    position: absolute;
-    
-    background: #fff;
-    
-    border: 1px solid #000;
-    border-radius: 20px;
-    
-    width: 80%;
-    height: 90%;
-    
-    max-width: 450px;
-    min-height: 500px;
-    
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
+#header-name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 15%;
+	background-color: #6785a3;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
 }
 
-header{
-    position: relative;
-    
-    height: 100px;
-    
-    background: #086A87;
-    
-    border-radius: 19px 19px 0px 0px;
+#header-name h3 {
+	font-size: 4.5vh;
+	color: rgb(250, 250, 250);
+	letter-spacing: 2px;
+	cursor: default;
 }
 
-header h1{
-    position: absolute;
-    
-    color: #fff;
-    
-    font-size: 20pt;
-    
-    text-align: center;
-    text-transform: uppercase;
-    
-    letter-spacing: 3px;
-    
-    width: 80%;
-    
-    left: 50%;
-    top: 50%;
-    
-    transform: translate(-50%, -50%);
+#all-tasks {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	width: 100%;
+	height: 75%;
+	background-color: #ffffff;
+	overflow-y: auto;
 }
 
-#tarefas{
-    width: 100%;
-    height: 75%;
-    
-    padding: 0px 10px;
-
-    box-sizing: border-box;
-
-    overflow: auto;
+.task {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	border-bottom: 1px dashed darkblue;
 }
 
-#tarefas::-webkit-scrollbar{
-    width: 10px;
-
+.check, .trash {
+	max-width: 17px;
+	cursor: pointer;
 }
 
-#tarefas::-webkit-scrollbar-thumb{
-    background: rgba(8, 105, 135, 0.5);
-    
-    border-radius: 20px;
+.task p {
+	width: 70%;
+	font-size: 3vh;
+	cursor: default;
+	margin: 10px 0px;
 }
 
-#lista{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+.line-through {
+	text-decoration: line-through;
+	color: #888888;
 }
 
-#lista td{
-    text-align: center;
-    vertical-align: middle;
+#new-task {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	height: 10%;
+	background-color: #6785a3;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
-.col1{
-    width: 20px;
+#text-task {
+	display: inline-block;
+	width: 80%;
+	height: 80%;
+	border-radius: 20px;
+	padding: 0px 10px;
+	box-sizing: border-box;
+	font-size: 3vh;
+	outline: none;
+	background-color: #6785a3;
+	border: 2px solid #ffffff;
+	color: #ffffff;
 }
 
-.col2{
-    padding: 15px 5px;
-    border-bottom: 1px dashed #000;
+#text-task::placeholder {
+	color: #e6e6e6;
 }
 
-.col3{
-    width: 20px;
-}
-
-.circulo{
-    border: 1px solid #000;
-    border-radius: 20px;
-    
-    width: 15px;
-    height: 15px;
-    
-    cursor: pointer;
-}
-
-.circulo-completo{
-    background: rgb(0, 128, 0);
-    
-    width: 15px;
-    height: 15px;
-    
-    cursor: pointer;
-    
-    color: #fff;
-    
-    border: 1px solid rgb(1, 75, 1);
-    border-radius: 20px;
-
-    text-align: center;
-
-    line-height: 15px;
-
-    font-size: 10pt;
-}
-
-.texto{
-    text-align: left;
-
-    font-size: 12pt;
-}
-
-.tachado{
-    color: rgb(128, 128, 128);
-
-    text-decoration: line-through;
-}
-
-.lixeira{
-    border: 1px solid rgb(255, 0, 0);
-    color: rgb(255, 0, 0);
-    width: 20px;
-    height: 20px;
-    font-size: 16pt;
-    text-align: center;
-    line-height: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.lixeira:hover{
-    color: white;
-    background: rgb(255, 0, 0);
-}
-
-#novaTarefa{
-    position: absolute;
-
-    background: #086A87;
-
-    border-radius: 0px 0px 19px 19px;
-    
-    width: 100%;
-    height: 40px;
-    
-    bottom: 0px;
-}
-
-#textoNovaTarefa{
-    position: absolute;
-    display: inline-block;
-    
-    box-sizing: border-box;
-    
-    font-size: 16pt;
-    
-    background: #086A87;
-    color: #fff;
-
-    padding: 0 15px;
-    border: 2px solid #fff;
-    border-radius: 20px;
-    
-    height: 75%;
-    width: 80%;
-    
-    top: 50%;
-    left: 3%;
-    
-    transform: translateY(-50%);
-    
-    outline: none;
-}
-
-#textoNovaTarefa::-webkit-input-placeholder{
-    color: rgb(200, 200, 200);
-}
-
-#mais{
-    display: inline-block;
-    position: absolute;
-
-    background: #fff;
-    color: #000;
-    
-    border: 1px solid #fff;
-    border-radius: 20px;
-    
-    text-align: center;
-
-    font-weight: 700;
-    font-size: 24pt;
-
-    line-height: 30px;
-    
-    width: 30px;
-    height: 30px;
-    
-    right: 3%;
-    top: 50%;
-    
-    transform: translateY(-50%);
-
-    cursor: pointer;
+#button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 4.5vh;
+	height: 4.5vh;
+	font-size: 4.5vh;
+	font-weight: bold;
+	background-color: #ffffff;
+	border: 1px solid #ffffff;
+	border-radius: 50%;
+	cursor: pointer;
 }

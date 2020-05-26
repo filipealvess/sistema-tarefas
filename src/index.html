@@ -2,46 +2,34 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Tarefas</title>
-    <link rel="stylesheet" href="css/style.css" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista de Tarefas - Filipe Alves</title>
+
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <div id="conteudo">
-        <header>
-            <h1>Lista de Tarefas</h1>
-        </header>
+	<div id="app">
+		<header id="header-name">
+			<h3>Minhas Tarefas</h3>
+		</header>
 
-        <div id="tarefas">
-            <table id="lista">
-                <tbody>
-                    <!-- <tr id="0">
-                        <td class="col1"><div class="circulo-completo">✓</div></td>
-                        <td class="col2"><div class="texto tachado">Tarefa 1</div></td>
-                        <td class="col3"><div class="lixeira">&times;</div></td>
-                    </tr>
-                    <tr id="1">
-                        <td class="col1"><div class="circulo"></div></td>
-                        <td class="col2"><div class="texto">Tarefa 2</div></td>
-                        <td class="col3"><div class="lixeira">&times;</div></td>
-                    </tr>
-                    <tr id="2">
-                        <td class="col1"><div class="circulo"></div></td>
-                        <td class="col2"><div class="texto">Tarefa 3</div></td>
-                        <td class="col3"><div class="lixeira">&times;</div></td>
-                    </tr> -->
-                </tbody>
-            </table>
-        </div>
+		<div id="all-tasks">
+			<!-- <div class="task">
+						<img class="check" src="img/unchecked.png" alt="Círculo de Tarefa Incompleta">
+						<p class="line-through">Revisar assuntos pendentes</p>
+						<img class="trash" src="img/trash.png" alt="Lixeira para excluir tarefa" />
+					</div> -->
+		</div>
 
-        <div id="novaTarefa">
-            <input type="text" id="textoNovaTarefa" placeholder="digite aqui..." />
-            <div id="mais" onclick="checarTarefa()">&plus;</div>
-        </div>
-    </div>
+		<div id="new-task">
+			<input id="text-task" type="text" placeholder="digite aqui..." autofocus />
+			<div id="button" onclick="checkTask()">+</div>
+		</div>
+	</div>
 
-    <script src="js/script.js"></script>
+	<script src="js/script.js"></script>
 </body>
+
 </html>
